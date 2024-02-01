@@ -1,4 +1,3 @@
-let logo = document.querySelector(".logo");
 criarBtn.onclick = () => {
   overlay.classList.add("show");
   formCriar.classList.add("show");
@@ -21,8 +20,8 @@ formCriar.onsubmit = () => {
   listTeams.innerHTML = "";
   listTeams.innerHTML = `
       <li>
-          <h4>Nome do Team <box-icon name='show'></box-icon></h4>
-          <h1>0 <span>/ 0</span></h1>
+          <h4>${nome.value}<box-icon name='show'></box-icon></h4>
+          <h1>0 <span>/ ${capacidade.value}</span></h1>
           <div class="actions">
               <button>adicionar</button>
               <button><box-icon id="deleteTeam" name='trash'></box-icon></button>
@@ -33,5 +32,4 @@ formCriar.onsubmit = () => {
   overlay.classList.remove("show");
   formCriar.classList.remove("show");
 };
-
 
