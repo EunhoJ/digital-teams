@@ -1,38 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 *{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: none;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-  color: white;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
 :root{
-  --dark-gray: #242424;
-  --black-90: #00000090;
-  --medium-gray: #333333;
-  --light-gray: #464646;
-  --pink: #c61067;
+    --dark-gray: #242424;
+    --black-90: #00000090;
+    --medium-gray: #333333;
+    --light-gray: #464646;
+    --pink: #C61067;
 }
 
 body{
-  padding: 0 100px;
-  background-color: var(--dark-gray);
+    padding: 0 100px;
+    background-color: var(--dark-gray);
 }
 
 header{
-  display: flex;
-  align-items: center;
-  padding-top: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
 }
 header .busca{
-  width: 500px;
-  position: relative;
-  margin-left: 26px;
+    width: 500px;
+    position: relative;
+    margin-left: 26px;
 }
 header .busca input{
     width: 100%;
@@ -41,6 +41,7 @@ header .busca input{
     padding-left: 16px;
     border-radius: 5px;
     border: 2px solid var(--light-gray);
+    transition-duration: 300ms;
 }
 header .busca input:focus{
     border-color: var(--pink);
@@ -57,208 +58,208 @@ header .busca box-icon:hover{
 }
 
 .container{
-  margin-top: 65px;
+    margin-top: 65px;
 }
 
 #teams h2{
-  font-size: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #teams h2 button{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid var(--pink);
-  border-radius: 5px;
-  line-height: 40px;
-  padding: 0 16px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition-duration: 300ms;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    line-height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition-duration: 300ms;
+    cursor: pointer;
 }
 #teams h2 button:hover{
-  background-color: var(--pink);
+    background-color: var(--pink);
 }
-
 #teams h2 box-icon{
-  fill: white;
-  position: relative;
-  top: -2px;
+    fill: white;
+    position: relative;
+    top: -2px;
 }
 #teams ul{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
 }
 #teams ul li{
-  width: calc(20% - 13px);
-  background-color: var(--medium-gray);
-  padding: 16px;
-  border-radius: 10px;
+    width: calc(20% - 13px);
+    background-color: var(--medium-gray);
+    padding: 16px;
+    border-radius: 10px;
 }
 #teams ul li.noTeams{
-  width: 100%;
+    width: 100%;
 }
 #teams ul li.noTeams h4{
-  justify-content: center;
+    justify-content: center;
 }
 #teams ul li h4{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  fill: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    fill: white;
 }
 #teams ul li h4 box-icon{
-  width: 40px;
-  padding: 0 8px;
-  cursor: pointer;
-  transition-duration: 200ms;
+    width: 40px;
+    padding: 0 8px;
+    cursor: pointer;
+    transition-duration: 200ms;
 }
 #teams ul li h4 box-icon:hover{
-  fill: var(--pink);
+    fill: var(--pink);
 }
 #teams ul li h1{
-  width: 100px;
-  height: 100px;
-  background-color: var(--light-gray);
-  font-size: 50px;
-  text-align: center;
-  margin: 26px auto;
-  border-radius: 100%;
-  font-weight: lighter;
-  line-height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    width: 100px;
+    height: 100px;
+    background-color: var(--light-gray);
+    font-size: 50px;
+    margin: 26px auto;
+    border-radius: 100%;
+    font-weight: lighter;
+    line-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #teams ul li h1 span{
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
 }
 #teams ul li .actions{
-  display: flex;
-  gap: 16px;
-  align-items: center
+    display: flex;
+    gap: 16px;
+    align-items: center;
 }
 #teams ul li .actions button{
-  background-color: transparent;
-  border: 1px solid var(--pink);
-  border-radius: 5px;
-  height: 40px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition-duration: 300ms;
-  cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition-duration: 300ms;
+    cursor: pointer;
 }
 #teams ul li .actions button:hover{
-  background-color: var(--pink);
+    background-color: var(--pink);
 }
 #teams ul li .actions button:first-of-type{
-  flex: 1;
+    flex: 1;
 }
 #teams ul li .actions button:last-of-type box-icon{
-  width: 38px;
-  height: 38px;
-  padding: 8px;
-  fill: #FFFFFF;
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+    fill: #FFFFFF;
 }
 
 #overlay{
-  width: 100%;
-  height: 100%;
-  background-color: var(--black-90);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition-duration: 200ms;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-gray-70);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 200ms;
 }
 #overlay.show{
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 form{
-  width: 500px;
-  background-color: var(--dark-gray);
-  padding: 26px;
-  border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  left: calc(50% - 250px);
-  transform: translateY(-50%);
-  z-index: 2;
-  opacity: 0;
-  visibility: hidden;
-  transition-duration: 200ms;
+    width: 500px;
+    background-color: var(--dark-gray);
+    padding: 26px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 250px);
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 200ms;
 }
 form.show{
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 form h3{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 form h3 box-icon{
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  padding: 8px;
-  fill: #FFFFFF;
-  cursor: pointer;
-  transition-duration: 200ms;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 8px;
+    fill: #FFFFFF;
+    cursor: pointer;
+    transition-duration: 200ms;
 }
 form h3 box-icon:hover{
-  background-color: var(--pink);
+    background-color: var(--pink);
 }
 form label{
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
 }
 form input{
-  width: 100%;
-  height: 40px;
-  border-radius: 5px;
-  background-color: var(--medium-gray);
-  border: 2px solid var(--light-gray);
-  margin-bottom: 16px;
-  padding-left: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--medium-gray);
+    border: 2px solid var(--light-gray);
+    margin-bottom: 16px;
+    padding-left: 10px;
 }
 form input:focus{
-  border-color: var(--pink);
+    border-color: var(--pink);
 }
 form button{
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid var(--pink);
-  border-radius: 5px;
-  height: 40px;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition-duration: 300ms;
-  cursor: pointer;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition-duration: 300ms;
+    cursor: pointer;
 }
 form button:hover{
-  background-color: var(--pink)
+    background-color: var(--pink);
 }
+
+

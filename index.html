@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Digital Teams</title>
-    <link rel="stylesheet" href="css/index.css"/>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital teams</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
     <header>
-      <div class="logo">
-        <img src="imgs/logo.png" alt="Logo Digital Teams"/>
-      </div>
-      <div class="busca">
-        <input type="text" placeholder="Qual grupo você está procurando?"/>
-        <box-icon name="search-alt"></box-icon>
-      </div>
+        <div class="logo">
+            <img src="imgs/logo.png" alt="Logo Digital Teams" />
+        </div>
+        <div class="busca">
+            <input type="text" placeholder="Qual grupo você está procurando?">
+            <box-icon name='search-alt'></box-icon>
+        </div>
     </header>
     <main>
-      <section id="teams" class="container">
-        <h2>Teams <button id="criarBtn"><box-icon name='plus'></box-icon>novo team</button></h2>
-        <ul id="listTeams">
-          <li class="noTeams"><h4>Nenhum team criado ainda</h4></li>
-        </ul>
-      </section>
+        <section id="teams" class="container">
+            <h2>Teams <button id="criarBtn"><box-icon name='plus'></box-icon> novo team</button></h2>
+            <ul id="listTeams">
+                <li class="noTeams"><h4>Nenhum team criado ainda</h4></li>
+            </ul>
+        </section>
     </main>
     <div id="overlay"></div>
     <form id="formCriar">
-      <h3>Criar <box-icon id="fecharBtn" name="x"></box-icon></h3>
-      <label for="nome">Nome do team</label>
-      <input type="text" id="nome" required>
-      <label for="capacidade">Capacidade do team</label>
-      <input type="text" id="capacidade" required>
-      <button id="criarCard" type="submit">Criar</button>
+        <h3>Criar <box-icon id="fecharBtn" name="x"></box-icon></h3>
+        <label for="nome">Nome do team</label>
+        <input type="text" id="nome" required>
+        <label for="capacidade">Capacidade do team</label>
+        <input type="text" id="capacidade" required>
+        <button type="submit">Criar</button>
     </form>
+
+    <form id="formParticipante">
+        <h3>Adicionar <box-icon id="fecharParticipanteBtn" name="x"></box-icon></h3>
+        <input type="hidden" id="teamID">
+        <label for="nome">Nome do partipante</label>
+        <input type="text" id="nomeParticipante" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/index.js"></script>
-  </body>
+</body>
 </html>
