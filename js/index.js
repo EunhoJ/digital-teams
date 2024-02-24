@@ -34,6 +34,7 @@ formCriar.onsubmit = () => {
         adicionarCards();
         overlay.classList.remove('show');
         formCriar.classList.remove('show');
+        formCriar.reset();
     }
 }
 
