@@ -40,8 +40,17 @@ formCriar.onsubmit = () => {
 
 formParticipante.onsubmit = () => {
     event.preventDefault();
-    teams[Number(teamID.value)].members.push(nomeParticipante.value);
-    alert("Participante inserido com sucesso!");
+    const teamIndex = Number(teamID.value);
+    const team = teams[teamIndex];
+    const participantName = nomeParticipante.value;
+
+    if (team.members.length >= team.capacity) {
+        alert("A equipe atingiu sua capacidade máxima de participantes!");
+        return;
+    }
+
+    team.members.push(participantName);
+    adicionarCards();
     formParticipante.reset();
 }
 
@@ -52,10 +61,11 @@ function adicionarCards(){
         return;
     }
     for(let i = 0; i < teams.length; i++){
+        const numMembers = teams[i].members.length;
         listTeams.innerHTML += `
             <li>
                 <h4>${teams[i].name} <box-icon name='show'></box-icon></h4>
-                <h1>0 <span>/ ${teams[i].capacity}</span></h1>
+                <h1>${numMembers} <span>/ ${teams[i].capacity}</span></h1>
                 <div class="actions">
                     <button onClick="mostrarFormParticipante(${i})">adicionar</button>
                     <button onClick="removerCard(${i})"><box-icon name='trash'></box-icon></button>
