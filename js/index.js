@@ -1,4 +1,4 @@
-let teams = [];
+let teams = JSON.parse(localStorage.getItem("lista")) || [];
 
 criarBtn.onclick = () => {
     overlay.classList.add('show');
@@ -31,6 +31,7 @@ formCriar.onsubmit = () => {
             capacity: capacidade.value,
             members: []
         });
+        localStorage.setItem("lista", JSON.stringify(teams));
         adicionarCards();
         overlay.classList.remove('show');
         formCriar.classList.remove('show');
@@ -40,18 +41,15 @@ formCriar.onsubmit = () => {
 
 formParticipante.onsubmit = () => {
     event.preventDefault();
-    const teamIndex = Number(teamID.value);
-    const team = teams[teamIndex];
-    const participantName = nomeParticipante.value;
-
-    if (team.members.length >= team.capacity) {
-        alert("A equipe atingiu sua capacidade máxima de participantes!");
-        return;
+    if(teams[Number(teamID.value)].members.length == teams[Number(teamID.value)].capacity){
+        alert('Capacidade máxima atingida')
+    }else{
+        teams[Number(teamID.value)].members.push(nomeParticipante.value);
+        localStorage.setItem("lista", JSON.stringify(teams));
+        alert("Participante inserido com sucesso!");
+        formParticipante.reset();
+        adicionarCards();
     }
-
-    team.members.push(participantName);
-    adicionarCards();
-    formParticipante.reset();
 }
 
 function adicionarCards(){
@@ -64,8 +62,8 @@ function adicionarCards(){
         const numMembers = teams[i].members.length;
         listTeams.innerHTML += `
             <li>
-                <h4>${teams[i].name} <box-icon name='show'></box-icon></h4>
-                <h1>${numMembers} <span>/ ${teams[i].capacity}</span></h1>
+                <h4>${teams[i].name} <box-icon name='show' onClick="mostrarParticipantes(${i})"></box-icon></h4>
+                <h1>${teams[i].members.length} <span>/ ${teams[i].capacity}</span></h1>
                 <div class="actions">
                     <button onClick="mostrarFormParticipante(${i})">adicionar</button>
                     <button onClick="removerCard(${i})"><box-icon name='trash'></box-icon></button>
@@ -75,6 +73,8 @@ function adicionarCards(){
     }
 }
 
+adicionarCards();
+
 function removerCard(indice){
     let listaAuxiliar = [];
     for(let i = 0; i < teams.length; i++){
@@ -83,6 +83,7 @@ function removerCard(indice){
         }
     }
     teams = listaAuxiliar;
+    localStorage.setItem("lista", JSON.stringify(teams));
     adicionarCards();
 }
 
@@ -100,4 +101,8 @@ function mostrarFormParticipante(indice){
     overlay.classList.add("show");
     formParticipante.classList.add("show");
     teamID.value = indice;
+}
+
+function mostrarParticipantes(indice){
+    alert(teams[indice].members)
 }
